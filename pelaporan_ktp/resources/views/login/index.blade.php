@@ -32,9 +32,9 @@
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Sign
                                     in</button>
-                            </div>
-                            <div class="d-grid">
-                                <a href="/register"><center>Register</center></a>
+                                    <p><br>Don't have an account?
+                                <a class="link-danger" href="/register">Register</a>
+                                </p>
                             </div>
                         </form>
                     </div>

@@ -63,9 +63,9 @@
                             </div>
                             <div class="d-grid">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Register</button>
-                            </div>
-                            <div class="d-grid">
-                                <a href="/login"><center>Login</center></a>
+                                <p><br>Have an account?
+                                <a class="link-danger" href="/login">Sign In</a>
+                                </p>
                             </div>
                         </form>
                     </div>
