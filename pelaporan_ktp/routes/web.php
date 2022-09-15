@@ -5,6 +5,7 @@ use App\Http\Controllers\OperatorController;
 use App\Http\Controllers\PelaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DataCetakController;
 use Illuminate\Http\Request;
 
 /*
@@ -19,12 +20,13 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.Layout');
 });
 
 Route::resource('operator', MahasiswaController::class);
 Route::get('/pelaporandd', [PelaporanController::class, 'pelaporandd']);
 Route::get('/pelaporanld', [PelaporanController::class, 'pelaporanld']);
+Route::get('/datapelaporan', [DataCetakController::class, 'dataPelaporan']);
 
 //login
 Route::get('/login', [LoginController::class, 'index']);
@@ -33,3 +35,5 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 //register
 Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
+
+//data_pelaporan
