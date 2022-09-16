@@ -1,2 +1,1 @@
-# magang
-Sistem Informasi Pelaporan Pencetakan KTP
+# PROJECT MAGANG - DISPENDUK CAPIL | | Sistem Informasi Pelaporan Pencetakan KTP
