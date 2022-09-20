@@ -42,7 +42,7 @@ class RegisterController extends Controller
             'nama' => ['required','max:255','min:3'],
             'jabatan' => 'required',
             'username' => ['required','max:255','min:3','unique:operator'],
-            'password' => ['required','max:255','min:3']
+            'password' => ['required','max:255','min:8', 'confirmed']
         ]);
         //mengenkripsi password
         $validatedData['password'] = Hash::make($validatedData['password']);
