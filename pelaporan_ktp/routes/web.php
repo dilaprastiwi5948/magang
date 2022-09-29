@@ -6,6 +6,7 @@ use App\Http\Controllers\PelaporanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DataCetakController;
+use App\Http\Controllers\PencarianController;
 use Illuminate\Http\Request;
 
 /*
@@ -40,3 +41,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 //data_pelaporan
+
+//cari_data_cetak
+Route::resource('cari', PencarianController::class);
