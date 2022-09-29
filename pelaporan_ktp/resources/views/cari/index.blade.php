@@ -47,9 +47,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href={{ route('users.index') }}><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -68,7 +66,7 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href={{ route('dashboard.index') }}><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
 
                     <li>
@@ -99,7 +97,7 @@ Website: http://www.webthemez.com/
                     Pencarian Data Pencetakan KTP EL
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href={{ route('dashboard.index') }}>Dashboard</a></li>
                     <li class="active">Cari Data</li>
                 </ol>
 
@@ -130,9 +128,9 @@ Website: http://www.webthemez.com/
                                                 placeholder="Search...">
                                         </div>
                                         <div class="input-group mb-2 mr-sm-2">
-                                        <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-fw fa-search"></i></button>
+                                            <button type="submit" class="btn btn-primary mb-2"><i
+                                                    class="fa fa-fw fa-search"></i></button>
                                         </div>
-                                        
                                 </div>
 
                                 <!--End Advanced Tables -->
