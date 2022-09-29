@@ -7,6 +7,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DataCetakController;
 use App\Http\Controllers\PencarianController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Http\Request;
 
 /*
@@ -44,3 +46,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 //cari_data_cetak
 Route::resource('cari', PencarianController::class);
+Route::resource('users', UsersController::class);
+Route::resource('dashboard', DashboardController::class);
