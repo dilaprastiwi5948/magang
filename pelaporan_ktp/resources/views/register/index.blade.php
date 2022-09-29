@@ -15,7 +15,11 @@
                 <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                     <div class="card border-0 shadow rounded-3 my-5">
                         <div class="card-body p-4 p-sm-5">
-                            <h5 class="card-title text-center mb-5 fw-dark fs-5">Register</h5>
+                        <h5 class="card-title text-center mb-5 fw-dark fs-5">
+                                <img src="https://turbo.net.id/wp-content/webp-express/webp-images/uploads/2020/12/19196952-removebg-preview.png.webp" class="rounded-circle"
+                                    style="width: 150px;" alt="Avatar" /><br>
+                                    REGISTER
+                                </h5>
                             <form action="/register" method="post">
                                 @csrf
                                 <div class="row">
@@ -43,10 +47,10 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                <label>Jabatan</label>
+                                    <label>Jabatan</label>
                                     <input type="text" name="jabatan"
                                         class="form-control  @error('jabatan') is-invalid @enderror" rows="5"
-                                        placeholder="Masukkan jabatan" required value="{{old('jabatan')}}" />
+                                        placeholder="Masukkan Jabatan" required value="{{old('jabatan')}}" />
                                     @error('jabatan')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -54,10 +58,10 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                <label>Username</label>
+                                    <label>Username</label>
                                     <input type="text" name="username"
                                         class="form-control  @error('username') is-invalid @enderror"
-                                        placeholder="Masukkan username" required value="{{old('username')}}" />
+                                        placeholder="Masukkan Username" required value="{{old('username')}}" />
                                     @error('username')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -65,7 +69,7 @@
                                     @enderror
                                 </div>
                                 <div class="col-md-12 mb-2">
-                                <label>Password</label>
+                                    <label>Password</label>
                                     <input type="password" name="password"
                                         class="form-control  @error('password') is-invalid @enderror"
                                         placeholder="Masukkan Password" required />
@@ -75,9 +79,9 @@
                                     </div>
                                     @enderror
                                 </div>
-                                <!--div class="col-md-12 mb-2">
-                                <label>Confirm Password</label>
-                                    <input type="password_confirm" name="password_confirm"
+                                <div class="col-md-12 mb-2">
+                                    <label for="password-confirm">Confirm Password</label>
+                                    <input id="password_confirm" type="password" name="password_confirmation"
                                         class="form-control  @error('password_confirm') is-invalid @enderror"
                                         placeholder="Confirm Password" required />
                                     @error('password')
@@ -85,7 +89,7 @@
                                         {{ $message }}
                                     </div>
                                     @enderror
-                                </div-->
+                                </div>
                                 <div class="d-grid">
                                     <button class="btn btn-primary btn-login text-uppercase fw-bold"
                                         type="submit">Register</button>
