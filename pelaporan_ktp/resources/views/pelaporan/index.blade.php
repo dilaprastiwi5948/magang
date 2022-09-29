@@ -47,9 +47,7 @@ Website: http://www.webthemez.com/
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="{{ route('users.index') }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
@@ -68,22 +66,22 @@ Website: http://www.webthemez.com/
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="#"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="{{ route('dashboard.index') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
 
                     <li>
-                        <a class="menu" href={{ route('pelaporan.create') }}><i class="fa fa-fw fa-file"></i>Registrasi
+                        <a class="menu" href="{{ route('pelaporan.create') }}"><i class="fa fa-fw fa-file"></i>Registrasi
                             Pelaporan</a>
                     </li>
                     {{-- <li>
                         <a class="menu" href="pelaporanLD.html"><i class="fa fa-fw fa-file"></i>Pelaporan Luar Daerah</a>
                     </li> --}}
                     <li>
-                        <a class="active-menu" href={{ route('pelaporan.index') }}><i class="fa fa-fw fa-table"></i>Data
+                        <a class="active-menu" href="{{ route('pelaporan.index') }}"><i class="fa fa-fw fa-table"></i>Data
                             Pencetakan</a>
                     </li>
                     <li>
-                        <a class="menu" href={{ route('cari.index') }}><i class="fa fa-fw fa-search"></i>Pencarian Data
+                        <a class="menu" href="{{ route('cari.index') }}"><i class="fa fa-fw fa-search"></i>Pencarian Data
                             Pencetakan</a>
                     </li>
                 </ul>
@@ -98,7 +96,7 @@ Website: http://www.webthemez.com/
                     Data Pencetakan KTP Oleh Operator
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{ route('dashboard.index') }}">Dashboard</a></li>
                     <li class="active">Data Pencetakan</li>
                 </ol>
 
