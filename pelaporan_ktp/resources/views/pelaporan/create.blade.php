@@ -30,13 +30,16 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Dashboard</a>
+                            <a class="nav-link" href={{ route('dashboard.index') }}>Dashboard</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href={{ route('pelaporan.create') }}>Registrasi Pelaporan </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href={{ route('pelaporan.index') }}>Data Pencetakan</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href={{ route('cari.index') }}>Pencarian Data</a>
                         </li>
                     </ul>
                 </div>
@@ -57,6 +60,11 @@
                         @endforeach
                     </ul>
                 </div>
+                @endif
+                @if ($message = Session::get('success')) 
+                    <div class="alert alert-success"> 
+                    <p>{{ $message }}</p> 
+                    </div> 
                 @endif
                 <form method="post" action="{{ route('pelaporan.store') }}" id="myForm">
                     @csrf
@@ -143,7 +151,6 @@
 
                     <div class="d-grid gap-2 d-md-block">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a class="btn btn-success" href="{{ route('pelaporan.index') }}">Back</a>
                     </div>
                 </form>
             </div>

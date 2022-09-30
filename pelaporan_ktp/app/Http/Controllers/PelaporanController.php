@@ -73,7 +73,7 @@ class PelaporanController extends Controller
         Pelapor::create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('pelaporan.index')
+        return redirect()->route('pelaporan.create')
             ->with('success', 'Data Berhasil Ditambahkan'); 
 
     }
