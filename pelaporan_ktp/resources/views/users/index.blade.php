@@ -107,7 +107,13 @@ Website: http://www.webthemez.com/
                             <div class="panel-heading">
                                 Biodata Operator
                             </div>
-                            <div class="panel-body">
+                            <div class="card mb-4">
+                                <div class="card-body text-center">
+                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                                        alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                                    <h5 class="my-3"></h5>
+                                </div>
+
                                 @if ($message = Session::get('success'))
                                 <div class="alert alert-success">
                                     <p>{{ $message }}</p>
@@ -115,24 +121,27 @@ Website: http://www.webthemez.com/
                                 @endif
 
                                 <form>
-                                    <div class="div class="col-md-12 mb-2">
-                                        <div class="col-md-6 mb-3">
+                                        <div class="col-md-4 mb-4">
                                             <label for="validationServer01">NIK</label>
                                             <input type="text" class="form-control is-valid" id="validationServer01"
                                                 placeholder="NIK" value="Dummy" required>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+
+                                        <div class="col-md-4 mb-4">
                                             <label for="validationServer02">Nama</label>
                                             <input type="text" class="form-control is-valid" id="validationServer02"
                                                 placeholder="Nama" value="Dummy" required>
                                         </div>
-                                        <div class="col-md-6 mb-3">
+                                        
+                                        <div class="col-md-4 mb-4">
                                             <label for="validationServer03">Jabatan</label>
                                             <input type="text" class="form-control is-invalid" id="validationServer03"
                                                 placeholder="Jabatan" value="Dummy" required>
                                         </div>
-                                    </div>
+                                   
                                 </form>
+                            </div>
+                            <div class="panel-body">
 
                                 <!--End Advanced Tables -->
                             </div>
