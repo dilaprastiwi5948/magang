@@ -118,7 +118,7 @@ Website: http://www.webthemez.com/
                                     <form class="form-inline">
                                         <select class="form-control form-control-lg"
                                             aria-label=".form-select-lg example">
-                                            <option selected>Cari dengan...</option>
+                                            <option selected disabled value="">Cari dengan...</option>
                                             <option value="1">NIK</option>
                                             <option value="2">Nama</option>
                                             <option value="3">Tgl_cetak</option>
