@@ -70,9 +70,10 @@
                     @csrf
 
                     <div class="col-md-3 mb-2">
-                        <label for="jenis_pelaporan">Pilih Jenis Pelaporan</label>
+                        <label for="jenis_pelaporan">Jenis Pelaporan</label>
                         <select type="jenis_pelaporan" name="jenis_pelaporan" class="form-control" id="jenis_pelaporan"
                             aria-describedby="jenis_pelaporan" required value="{{old('jenis_pelaporan')}}">
+                            <option selected disabled value="">Pilih Jenis Pelaporan...</option>
                             <option>Dalam Daerah</option>
                             <option>Luar Daerah</option>
                         </select>
@@ -126,9 +127,10 @@
                     </div>
 
                     <div class="col-md-3 mb-2">
-                        <label for="pengajuan">Pilih Jenis Pengajuan</label>
+                        <label for="pengajuan">Jenis Pengajuan</label>
                         <select type="pengajuan" name="pengajuan" class="form-control" id="pengajuan"
                             aria-describedby="pengajuan" value="{{old('pengajuan')}}">
+                            <option selected disabled value="">Pilih Jenis Pengajuan...</option>
                             <option>Online</option>
                             <option>Dinas</option>
                             <option>Kelurahan</option>
@@ -140,6 +142,7 @@
                         <label for="keterangan">Keterangan</label>
                         <select type="keterangan" name="keterangan" class="form-control" id="keterangan"
                             aria-describedby="keterangan" value="{{old('keterangan')}}">
+                            <option selected disabled value="">Pilih Keterangan...</option>
                             <option>Rusak</option>
                             <option>Kehilangan</option>
                             <option>Pemula</option>
