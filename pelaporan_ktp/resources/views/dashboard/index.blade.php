@@ -21,7 +21,6 @@ Website: http://www.webthemez.com/
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-    
 </head>
 
 <body>
@@ -119,10 +118,12 @@ Website: http://www.webthemez.com/
                                             <div class="col-md-3 col-sm-6 col-xs-12">
                                                 <div class="card bg-c-blue order-card">
                                                     <div class="panel-body text-center">
-                                                        <p class="text-uppercase mar-btm text-sm">Data Pelaporan</p>
-                                                        <i class="fa fa-file fa-5x"></i>
+                                                        <p class="text-uppercase mar-btm text-sm">Data Pencetakkan</p>
+                                                        <a href="{{ route('pelaporan.index') }}"><i class="fa fa-print fa-5x" ></i></a>
                                                         <hr>
-                                                        <p class="h2 text-thin">254,487</p>
+                                                        <p class="h2 text-thin">
+                                                            {{ $pelapor->count() }}
+                                                        </p>
                                                         <small><span class="text-semibold">item</span></small>
                                                     </div>
                                                 </div>
@@ -130,8 +131,8 @@ Website: http://www.webthemez.com/
                                             <div class="col-md-3 col-sm-6 col-xs-12">
                                                 <div class="panel panel-dark panel-colorful">
                                                     <div class="panel-body text-center">
-                                                        <p class="text-uppercase mar-btm text-sm">Data Pencetakkan</p>
-                                                        <i class="fa fa-print fa-5x"></i>
+                                                        <p class="text-uppercase mar-btm text-sm">Data - Bingung hehe</p>
+                                                        <a href="{{ route('pelaporan.index') }}"><i class="fa fa-print fa-5x" ></i></a>
                                                         <hr>
                                                         <p class="h2 text-thin">25,000</p>
                                                         <small><span class="text-semibold">item</span> </small>
