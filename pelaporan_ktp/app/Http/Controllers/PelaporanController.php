@@ -34,7 +34,17 @@ class PelaporanController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->search;
-        $pelapor = Pelapor::where('nama', 'like', "%" . $keyword . "%")->paginate(5);
+        $pelapor = Pelapor::where('nama', 'like', "%" . $keyword . "%")
+        ->orWhere('jenis_pelaporan', 'like', "%".$request->search."%")
+            ->orWhere('nama', 'like', "%".$request->search."%")
+            ->orWhere('tanggal_lahir', 'like', "%".$request->search."%")
+            ->orWhere('alamat', 'like', "%".$request->search."%")
+            ->orWhere('kelurahan', 'like', "%".$request->search."%")
+            ->orWhere('kecamatan', 'like', "%".$request->search."%")
+            ->orWhere('kota', 'like', "%".$request->search."%")
+            ->orWhere('pengajuan', 'like', "%".$request->search."%")
+            ->orWhere('keterangan', 'like', "%".$request->search."%")
+            ->orWhere('tanggal', 'like', "%".$request->search."%")->paginate(5);
         return view('pelaporan.index', compact('pelapor'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
