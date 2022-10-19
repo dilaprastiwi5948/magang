@@ -21,6 +21,7 @@ Website: http://www.webthemez.com/
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    
 </head>
 
 <body>
@@ -113,49 +114,60 @@ Website: http://www.webthemez.com/
                                     <p>{{ $message }}</p>
                                 </div>
                                 @endif
+                                <div class="container bootstrap snippets bootdey">
+                                        <div class="row">
+                                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                                <div class="card bg-c-blue order-card">
+                                                    <div class="panel-body text-center">
+                                                        <p class="text-uppercase mar-btm text-sm">Data Pelaporan</p>
+                                                        <i class="fa fa-file fa-5x"></i>
+                                                        <hr>
+                                                        <p class="h2 text-thin">254,487</p>
+                                                        <small><span class="text-semibold">item</span></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                                <div class="panel panel-dark panel-colorful">
+                                                    <div class="panel-body text-center">
+                                                        <p class="text-uppercase mar-btm text-sm">Data Pencetakkan</p>
+                                                        <i class="fa fa-print fa-5x"></i>
+                                                        <hr>
+                                                        <p class="h2 text-thin">25,000</p>
+                                                        <small><span class="text-semibold">item</span> </small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
 
-                                <div class="jumbotron jumbotron-fluid">
-                                    <div class="container">
-                                        <h1>Hello, Operator!</h1>
-                                        <p>
-                                            Content ini masih dummy<br />
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores quasi reiciendis delectus quidem eaque error dolore aliquid maxime quod ut, dignissimos nam sapiente ipsam commodi tempore id excepturi perspiciatis eveniet.<br />
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati amet quidem pariatur harum, asperiores ea necessitatibus quisquam facere fuga quo quam, assumenda iste, placeat unde ullam exercitationem eligendi sint esse?
-                                        </p>
-                                        <p>
-                                            <!--button class="btn btn-lg btn-primary">Tutorial</button>
-                                            <button class="btn btn-lg btn-danger">Demo</button-->
-                                        </p>
                                     </div>
 
+                                    <!--End Advanced Tables -->
                                 </div>
-
-                                <!--End Advanced Tables -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- /. WRAPPER  -->
-    <!-- JS Scripts-->
-    <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
-    <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#dataTables-example').dataTable();
-    });
-    </script>
-    <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
+        <!-- /. WRAPPER  -->
+        <!-- JS Scripts-->
+        <!-- jQuery Js -->
+        <script src="assets/js/jquery-1.10.2.js"></script>
+        <!-- Bootstrap Js -->
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- Metis Menu Js -->
+        <script src="assets/js/jquery.metisMenu.js"></script>
+        <!-- DATA TABLE SCRIPTS -->
+        <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+        <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+        <script>
+        $(document).ready(function() {
+            $('#dataTables-example').dataTable();
+        });
+        </script>
+        <!-- Custom Js -->
+        <script src="assets/js/custom-scripts.js"></script>
 
 
 </body>
