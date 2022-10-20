@@ -50,7 +50,7 @@ Website: http://www.webthemez.com/
                         <li><a href="{{ route('users.index') }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -70,13 +70,10 @@ Website: http://www.webthemez.com/
                     </li>
 
                     <li>
-                        <a class="menu" href="{{ route('pelaporan.create') }}"><i
+                        <a class="menu" href="{{ route('data_pelaporan.index') }}"><i
                                 class="fa fa-fw fa-file"></i>Registrasi
                             Pelaporan</a>
                     </li>
-                    {{-- <li>
-                        <a class="menu" href="pelaporanLD.html"><i class="fa fa-fw fa-file"></i>Pelaporan Luar Daerah</a>
-                    </li> --}}
                     <li>
                         <a class="active-menu" href="{{ route('pelaporan.index') }}"><i
                                 class="fa fa-fw fa-table"></i>Data
