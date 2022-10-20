@@ -4,6 +4,7 @@ use App\Models\Pelapor;
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PencarianController extends Controller
 {
@@ -14,27 +15,24 @@ class PencarianController extends Controller
      */
     public function index()
     {
-        return view('cari.index');
+        $pelapor = DB::table('pelapor')->paginate(5);
+        return view('cari.index', compact('pelapor'));
     }
 
     public function search(){
-        if($request->has('search')){ // Pemilihan jika ingin melakukan pencarian
-            $datas= Pelapor::where('nik_pelapor', 'like', "%".$request->search."%")
-            ->orwhere('jenis_pelaporan', 'like', "%".$request->search."%")
-            ->orwhere('nama', 'like', "%".$request->search."%")
-            ->orwhere('tanggal_lahir', 'like', "%".$request->search."%")
-            ->orwhere('alamat', 'like', "%".$request->search."%")
-            ->orwhere('kelurahan', 'like', "%".$request->search."%")
-            ->orwhere('kecamatan', 'like', "%".$request->search."%")
-            ->orwhere('kota', 'like', "%".$request->search."%")
-            ->orwhere('pengajuan', 'like', "%".$request->search."%")
-            ->orwhere('keterangan', 'like', "%".$request->search."%")
-            ->paginate();
-        } else { // Pemilihan jika tidak melakukan pencarian
-            //fungsi eloquent menampilkan data menggunakan pagination
-            $datas= Pelapor::paginate(5); // Pagination menampilkan 5 data
-        }
-        return view('',compact('datas'))->with('i',(request()->input('datas',1)-1)*5);
+        $keyword = $request->search;
+        $pelapor = Pelapor::where('nama', 'like', "%" . $keyword . "%")
+        ->orWhere('jenis_pelaporan', 'like', "%".$request->search."%")
+            ->orWhere('nama', 'like', "%".$request->search."%")
+            ->orWhere('tanggal_lahir', 'like', "%".$request->search."%")
+            ->orWhere('alamat', 'like', "%".$request->search."%")
+            ->orWhere('kelurahan', 'like', "%".$request->search."%")
+            ->orWhere('kecamatan', 'like', "%".$request->search."%")
+            ->orWhere('kota', 'like', "%".$request->search."%")
+            ->orWhere('pengajuan', 'like', "%".$request->search."%")
+            ->orWhere('keterangan', 'like', "%".$request->search."%")
+            ->orWhere('tanggal', 'like', "%".$request->search."%")->paginate(5);
+        return view('cari.index', compact('pelapor'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
