@@ -28,16 +28,13 @@ Website: http://www.webthemez.com/
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong></i> Pelaporan KTP</strong></a>
-                <div id="sideNav" href="">
-                    <i class="fa fa-bars icon"></i>
-                </div>
+                <a class="navbar-brand" href="{{route('dashboard.index')}}"><strong></i> Pelaporan KTP</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -50,7 +47,7 @@ Website: http://www.webthemez.com/
                         <li><a href={{ route('users.index') }}><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -71,9 +68,13 @@ Website: http://www.webthemez.com/
                     </li>
 
                     <li>
-                        <a class="menu" href={{ route('pelaporan.create') }}><i class="fa fa-fw fa-file"></i>Registrasi
+                        <a class="menu" href={{ route('data_pelaporan.index') }}><i class="fa fa-fw fa-file"></i>Registrasi
                             Pelaporan</a>
                     </li>
+                    {{--<li>
+                        <a class="menu" href={{ route('data_pelaporan.index') }}><i class="fa fa-fw fa-file"></i>Registrasi
+                            Pelaporan 2</a>
+                    </li>--}}
                     {{-- <li>
                         <a class="menu" href="pelaporanLD.html"><i class="fa fa-fw fa-file"></i>Pelaporan Luar Daerah</a>
                     </li> --}}
