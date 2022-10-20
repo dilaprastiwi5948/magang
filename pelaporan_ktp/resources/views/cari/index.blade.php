@@ -50,7 +50,7 @@ Website: http://www.webthemez.com/
                         <li><a href={{ route('users.index') }}><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -70,12 +70,9 @@ Website: http://www.webthemez.com/
                     </li>
 
                     <li>
-                        <a class="menu" href={{ route('pelaporan.create') }}><i class="fa fa-fw fa-file"></i>Registrasi
+                        <a class="menu" href={{ route('data_pelaporan.index') }}><i class="fa fa-fw fa-file"></i>Registrasi
                             Pelaporan</a>
                     </li>
-                    {{-- <li>
-                        <a class="menu" href="pelaporanLD.html"><i class="fa fa-fw fa-file"></i>Pelaporan Luar Daerah</a>
-                    </li> --}}
                     <li>
                         <a class="menu" href={{ route('pelaporan.index') }}><i class="fa fa-fw fa-table"></i>Data
                             Pencetakan</a>
@@ -119,18 +116,78 @@ Website: http://www.webthemez.com/
                                         <select class="form-control form-control-lg"
                                             aria-label=".form-select-lg example">
                                             <option selected disabled value="">Cari dengan...</option>
-                                            <option value="1">NIK</option>
-                                            <option value="2">Nama</option>
-                                            <option value="3">Tgl_cetak</option>
+                                            <option value="nik">NIK</option>
+                                            <option value="nama">Nama</option>
+                                            <option value="nama">Kelurahan</option>
+                                            <option value="tanggal">Kecamatan</option>
+                                            <option value="tanggal">Kabupaten</opion>
+                                            <option value="tanggal">Tgl_cetak</option>
                                         </select>
                                         <div class="input-group mb-2 mr-sm-2">
-                                            <input type="text" class="form-control" id="inlineFormInputGroupUsername2"
+                                            <input type="text" class="form-control" id="search" name="search"
                                                 placeholder="Search...">
                                         </div>
                                         <div class="input-group mb-2 mr-sm-2">
                                             <button type="submit" class="btn btn-primary mb-2"><i
                                                     class="fa fa-fw fa-search"></i></button>
                                         </div>
+                                </div>
+                                </form>
+                                <div class="card">
+                                    {{-- filter:end --}}
+                                    <table class="table table-bordered">
+                                        <tr>
+                                            <th>NIK</th>
+                                            <th>Jenis Pelaporan</th>
+                                            <th>Nama</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Alamat</th>
+                                            <th>Kelurahan</th>
+                                            <th>Kecamatan</th>
+                                            <th>Kabupaten/Kota</th>
+                                            <th>Pengajuan</th>
+                                            <th>Keterangan</th>
+                                            <th>Tanggal</th>
+                                            <th width="280px">Action</th>
+                                        </tr>
+
+                                        @foreach ($pelapor as $Pelapor)
+                                        <tr>
+                                            <td>{{ $Pelapor->nik_pelapor }}</td>
+                                            <td>{{ $Pelapor->jenis_pelaporan }}</td>
+                                            <td>{{ $Pelapor->nama }}</td>
+                                            <td>{{ $Pelapor->tanggal_lahir }}</td>
+                                            <td>{{ $Pelapor->alamat }}</td>
+                                            <td>{{ $Pelapor->kelurahan }}</td>
+                                            <td>{{ $Pelapor->kecamatan }}</td>
+                                            <td>{{ $Pelapor->kota }}</td>
+                                            <td>{{ $Pelapor->pengajuan }}</td>
+                                            <td>{{ $Pelapor->keterangan }}</td>
+                                            <td>{{ $Pelapor->tanggal }}</td>
+                                            <td>
+                                                <form action="{{ route('pelaporan.destroy',$Pelapor->nik_pelapor) }}"
+                                                    method="POST">
+                                                    <a class="btn btn-info"
+                                                        href="{{ route('pelaporan.show',$Pelapor->nik_pelapor) }}">
+                                                        <i class="fa fa-eye" aria-hidden="true"></i>
+                                                    </a>
+                                                    <a class="btn btn-primary"
+                                                        href="{{ route('pelaporan.edit',$Pelapor->nik_pelapor) }}">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
+                                                    {{-- <a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+                                                    --}}
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">
+                                                        <i class="fa fa-trash-o"></i>
+                                                    </button>
+                                                </form>
+                                            </td>
+
+                                        </tr>
+                                        @endforeach
+                                    </table>
                                 </div>
 
                                 <!--End Advanced Tables -->
