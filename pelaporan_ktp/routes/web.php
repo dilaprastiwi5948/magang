@@ -22,15 +22,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.Layout');
-});
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/', [LoginController::class, 'authenticate']);
 
 // Route::resource('operator', MahasiswaController::class);
 // Route::get('/pelaporandd', [PelaporanController::class, 'pelaporandd']);
 // Route::get('/pelaporanld', [PelaporanController::class, 'pelaporanld']);
 // Route::get('/datapelaporan', [DataCetakController::class, 'dataPelaporan']);
 Route::resource('pelaporan', PelaporanController::class);
+Route::resource('data_pelaporan', DataCetakController::class);
 //Route search
 Route::get('/search', [PelaporanController::class, 'search'])->name('search');
 
