@@ -119,8 +119,8 @@ Website: http://www.webthemez.com/
                                             <option value="nik">NIK</option>
                                             <option value="nama">Nama</option>
                                             <option value="nama">Kelurahan</option>
-                                            <option value="tanggal">Kecamatan</option>
-                                            <option value="tanggal">Kabupaten</opion>
+                                            <option value="kecamatan">Kecamatan</option>
+                                            <option value="kabupaten">Kabupaten</opion>
                                             <option value="tanggal">Tgl_cetak</option>
                                         </select>
                                         <div class="input-group mb-2 mr-sm-2">
@@ -131,11 +131,13 @@ Website: http://www.webthemez.com/
                                             <button type="submit" class="btn btn-primary mb-2"><i
                                                     class="fa fa-fw fa-search"></i></button>
                                         </div>
+                                        <br><br>
                                 </div>
                                 </form>
                                 <div class="card">
                                     {{-- filter:end --}}
                                     <table class="table table-bordered">
+                                    <thead class="thead-dark">
                                         <tr>
                                             <th>NIK</th>
                                             <th>Jenis Pelaporan</th>
@@ -150,6 +152,7 @@ Website: http://www.webthemez.com/
                                             <th>Tanggal</th>
                                             <th width="280px">Action</th>
                                         </tr>
+                                    </thead>
 
                                         @foreach ($pelapor as $Pelapor)
                                         <tr>
@@ -184,7 +187,6 @@ Website: http://www.webthemez.com/
                                                     </button>
                                                 </form>
                                             </td>
-
                                         </tr>
                                         @endforeach
                                     </table>
@@ -192,6 +194,9 @@ Website: http://www.webthemez.com/
 
                                 <!--End Advanced Tables -->
                             </div>
+                            Halaman : {{ $pelapor->currentPage() }} <br />
+                            Jumlah Data : {{ $pelapor->total() }} <br />
+                            Data Per Halaman : {{ $pelapor->perPage() }} <br />
                         </div>
                     </div>
                 </div>
