@@ -131,10 +131,10 @@
                         <select type="pengajuan" name="pengajuan" class="form-control" id="pengajuan"
                             aria-describedby="pengajuan" value="{{old('pengajuan')}}">
                             <option selected disabled value="">Pilih Jenis Pengajuan...</option>
-                            <option>Online</option>
-                            <option>Dinas</option>
-                            <option>Kelurahan</option>
-                            <option>MPP</option>
+                            <option value="Online">Online</option>
+                            <option value="Dinas">Dinas</option>
+                            <option value="Kelurahan">Kelurahan</option>
+                            <option value="MPP">MPP</option>
                         </select>
                     </div>
 
@@ -143,17 +143,17 @@
                         <select type="keterangan" name="keterangan" class="form-control" id="keterangan"
                             aria-describedby="keterangan" value="{{old('keterangan')}}">
                             <option selected disabled value="">Pilih Keterangan...</option>
-                            <option>Rusak</option>
-                            <option>Kehilangan</option>
-                            <option>Pemula</option>
-                            <option>Perubahan data</option>
-                            <option>Paket</option>
-                            <option>Surat Keterangan</option>
+                            <option value="Rusak">Rusak</option>
+                            <option value="Kehilangan">Kehilangan</option>
+                            <option value="Pemula">Pemula</option>
+                            <option value="Perubahan Data">Perubahan data</option>
+                            <option value="Paket">Paket</option>
+                            <option value="Surat Keterangan">Surat Keterangan</option>
                         </select>
                     </div>
 
                     <div class="d-grid gap-2 d-md-block">
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                     </div>
                 </form>
             </div>
