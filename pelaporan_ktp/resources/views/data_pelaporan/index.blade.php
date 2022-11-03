@@ -113,40 +113,34 @@ Website: http://www.webthemez.com/
                                 </div>
                                 @endif
                                 <div class="table-responsive">
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <strong>Whoops!</strong> There were some problems with your
-                                        input.<br><br>
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    @endif
                                     @if ($message = Session::get('success'))
                                     <div class="alert alert-success">
                                         <p>{{ $message }}</p>
                                     </div>
                                     @endif
-                                    <form method="post" action="{{ route('pelaporan.store') }}" id="myForm">
+                                    <form method="POST" action="{{ route('pelaporan.store') }}"
+                                        enctype="multipart/form-data">
                                         @csrf
-
                                         <div class="col-md-12 mb-2">
                                             <label for="jenis_pelaporan">Jenis Pelaporan</label>
+                                            @error('jenis_pelaporan')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
                                             <select type="jenis_pelaporan" name="jenis_pelaporan" class="form-control"
-                                                id="jenis_pelaporan" aria-describedby="jenis_pelaporan" required
+                                                id="jenis_pelaporan" aria-describedby="jenis_pelaporan"
                                                 value="{{old('jenis_pelaporan')}}">
                                                 <option selected disabled value="">Pilih Jenis Pelaporan...
                                                 </option>
-                                                <option>Dalam Daerah</option>
-                                                <option>Luar Daerah</option>
+                                                <option value="Dalam Daerah">Dalam Daerah</option>
+                                                <option value="Luar Daerah">Luar Daerah</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-12 mb-2">
+                                        <div class="col-md-6 mb-2">
                                             <label for="nik_pelapor">NIK</label>
                                             @error('nik_pelapor')
-                                            <div class="invalid-feedback">
+                                            <div class="text text-danger mt-2">
                                                 {{ $message }}
                                             </div>
                                             @enderror
@@ -156,50 +150,93 @@ Website: http://www.webthemez.com/
                                                 placeholder="Masukkan NIK">
                                         </div>
 
-                                        <div class="col-md-12 mb-2">
+                                        <div class="col-md-6 mb-2">
                                             <label for="nama">Nama</label>
-                                            <input type="Nama" name="nama" class="form-control" id="nama"
-                                                aria-describedby="nama" placeholder="Masukkan Nama" required
+                                            @error('nama')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="Nama" name="nama"
+                                                class="form-control  @error('nama') is-invalid @enderror"" id=" nama"
+                                                aria-describedby="nama" placeholder="Masukkan Nama"
                                                 value="{{old('nama')}}">
                                         </div>
 
-                                        <div class="col-md-12 mb-2">
+
+                                        <div class="col-md-6 mb-2">
                                             <label for="tanggal_lahir">Tanggal Tahir</label>
-                                            <input type="date" name="tanggal_lahir" class="form-control"
-                                                id="tanggal_lahir" aria-describedby="tanggal_lahir" required>
+                                            @error('tanggal_lahir')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="date" name="tanggal_lahir"
+                                                class="form-control  @error('tanggal_lahir') is-invalid @enderror"
+                                                id="tanggal_lahir" aria-describedby="tanggal_lahir">
                                         </div>
 
-                                        <div class="col-md-12 mb-2">
+                                        <div class="col-md-6 mb-2">
                                             <label for="alamat">Alamat</label>
-                                            <input type="alamat" name="alamat" class="form-control" id="alamat"
-                                                aria-describedby="alamat" placeholder="Masukkan Alamat" required
+                                            @error('alamat')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="alamat" name="alamat"
+                                                class="form-control  @error('alamat') is-invalid @enderror" id="alamat"
+                                                aria-describedby="alamat" placeholder="Masukkan Alamat"
                                                 value="{{old('alamat')}}">
                                         </div>
 
                                         <div class="col-md-6 mb-2">
                                             <label for="kelurahan">Desa / Kelurahan</label>
-                                            <input type="kelurahan" name="kelurahan" class="form-control" id="kelurahan"
-                                                aria-describedby="kelurahan" placeholder="Masukkan Kelurahan" required
-                                                value="{{old('kelurahan')}}">
+                                            @error('kelurahan')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="kelurahan" name="kelurahan"
+                                                class="form-control  @error('kelurahan') is-invalid @enderror"
+                                                id="kelurahan" aria-describedby="kelurahan"
+                                                placeholder="Masukkan Kelurahan" value="{{old('kelurahan')}}">
                                         </div>
 
                                         <div class="col-md-6 mb-2">
                                             <label for="kecamatan">Kecamatan</label>
-                                            <input type="kecamatan" name="kecamatan" class="form-control" id="kecamatan"
-                                                aria-describedby="kecamatan" placeholder="Masukkan Kecamatan" required
+                                            @error('kecamatan')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="kecamatan" name="kecamatan"
+                                                class="form-control  @error('kecamatan') is-invalid @enderror"" id="
+                                                kecamatan" aria-describedby="kecamatan" placeholder="Masukkan Kecamatan"
                                                 value="{{old('kecamatan')}}">
                                         </div>
 
                                         <div class="col-md-6 mb-2">
                                             <label for="kota">Kabupaten / Kota</label>
-                                            <input type="kota" name="kota" class="form-control" id="kota"
-                                                aria-describedby="kota" placeholder="Masukkan Kabupaten/Kota" required
+                                            @error('kota')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <input type="kota" name="kota"
+                                                class="form-control  @error('kota') is-invalid @enderror"" id=" kota"
+                                                aria-describedby="kota" placeholder="Masukkan Kabupaten/Kota"
                                                 value="{{old('kota')}}">
                                         </div>
 
                                         <div class="col-md-6 mb-2">
                                             <label for="pengajuan">Jenis Pengajuan</label>
-                                            <select type="pengajuan" name="pengajuan" class="form-control"
+                                            @error('pengajuan')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <select type="pengajuan" name="pengajuan"
+                                                class="form-control  @error('pengajuan') is-invalid @enderror"
                                                 id="pengajuan" aria-describedby="pengajuan"
                                                 value="{{old('pengajuan')}}">
                                                 <option selected disabled value="">Pilih Jenis Pengajuan...
@@ -213,25 +250,33 @@ Website: http://www.webthemez.com/
 
                                         <div class="col-md-12 mb-2">
                                             <label for="keterangan">Keterangan</label>
-                                            <select type="keterangan" name="keterangan" class="form-control"
-                                                id="keterangan" aria-describedby="keterangan"
+                                            @error('keterangan')
+                                            <div class="text text-danger mt-2">
+                                                {{ $message }}
+                                            </div>
+                                            @enderror
+                                            <select type="keterangan" name="keterangan"
+                                                class="form-control  @error('keterangan') is-invalid @enderror""
+                                                id=" keterangan" aria-describedby="keterangan"
                                                 value="{{old('keterangan')}}">
                                                 <option selected disabled value="">Pilih Keterangan...</option>
-                                                <option>Rusak</option>
-                                                <option>Kehilangan</option>
-                                                <option>Pemula</option>
-                                                <option>Perubahan data</option>
-                                                <option>Paket</option>
-                                                <option>Surat Keterangan</option>
+                                                <option value="Rusak">Rusak</option>
+                                                <option value="Kehilangan">Kehilangan</option>
+                                                <option value="Pemula">Pemula</option>
+                                                <option value="Perubahan Data">Perubahan data</option>
+                                                <option value="Paket">Paket</option>
+                                                <option value="Surat Keterangan">Surat Keterangan</option>
                                             </select>
+                                        </div>
+                                        <div class="col-md-12 mb-2">
+                                            <br>
+                                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> |
+                                                Simpan</button>
                                         </div>
                                     </form>
                                     {{$pelapor->onEachSide(1)->links()}}
                                 </div>
-                                <br>
-                                <div class="col-md-12 mb-2">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> | Simpan</button>
-                                </div>
+
                             </div>
                             </table>
                         </div>
