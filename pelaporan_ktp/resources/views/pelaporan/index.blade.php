@@ -121,7 +121,7 @@ Website: http://www.webthemez.com/
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <!-- Start kode untuk form pencarian -->
                                     <form class="form" method="get" action="{{ route('search') }}">
-                                    <div class="input-group mb-2 mr-sm-2">
+                                        <div class="input-group mb-2 mr-sm-2">
                                             <input type="text" class="form-control" name="search" id="search"
                                                 placeholder="Search...">
                                         </div>
@@ -130,6 +130,13 @@ Website: http://www.webthemez.com/
                                                     class="fa fa-fw fa-search"></i></button>
                                         </div>
 
+                                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                        <hr />    
+                                        <a href="/cetak"
+                                                class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm"
+                                                target="_blank"><i class="fa fa-download fa-lg text-white-80"></i> |
+                                                Cetak PDF</a>
+                                        </div>
                                         <table class="table table-bordered">
                                             <tr>
                                                 <th>NIK</th>
@@ -176,7 +183,7 @@ Website: http://www.webthemez.com/
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger">
-                                                        <i class="fa fa-trash-o"></i>
+                                                            <i class="fa fa-trash-o"></i>
                                                         </button>
                                                     </form>
                                                 </td>
