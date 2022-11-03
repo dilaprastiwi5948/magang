@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pelapor;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class PelaporanController extends Controller
 {
@@ -68,7 +69,7 @@ class PelaporanController extends Controller
     {
         //melakukan validasi data
         $request->validate([ 
-            'nik_pelapor' => ['required', 'unique:pelapor'],
+            'nik_pelapor' => ['required', 'unique:pelapor', 'min:16', 'max:16', 'numeric'],
             'jenis_pelaporan' => 'required', 
             'nama' => 'required', 
             'tanggal_lahir' => 'required', 
@@ -83,7 +84,7 @@ class PelaporanController extends Controller
         Pelapor::create($request->all());
 
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('data_pelaporan.index')
+        return redirect()->route('pelaporan.index')
             ->with('success', 'Data Berhasil Ditambahkan'); 
 
     }
@@ -126,7 +127,7 @@ class PelaporanController extends Controller
     {
         //melakukan validasi data
         $request->validate([ 
-            'nik_pelapor' => 'required', 
+            'nik_pelapor' => ['required', 'unique:pelapor', 'min:16', 'max:16', 'numeric'],
             'jenis_pelaporan' => 'required', 
             'nama' => 'required', 
             'tanggal_lahir' => 'required', 
@@ -158,5 +159,12 @@ class PelaporanController extends Controller
         Pelapor::find($nik_pelapor)->delete(); 
         return redirect()->route('pelaporan.index') 
             -> with('success', 'Data Berhasil Dihapus');
+    }
+
+    public function cetakpdf(){
+        $pelapor = Pelapor::all();
+ 
+    	$pdf = PDF::loadview('data_pelaporan.cetak',['pelapor'=>$pelapor]);
+        return $pdf->setPaper('a4', 'landscape')->setOptions(['defaultFont' => 'serif'])->stream('laporan-data_pelaporan.pdf');
     }
 }
