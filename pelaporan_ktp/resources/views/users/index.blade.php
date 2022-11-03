@@ -44,16 +44,16 @@ Website: http://www.webthemez.com/
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-users fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href={{ route('users.index') }}><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <ul class="dropdown-menu dropdown-users">
+                        <li><a href={{ route('users.index') }}><i class="fa fa-users fa-fw"></i> users Profile</a>
                         </li>
                         <li class="divider"></li>
                         <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
-                    <!-- /.dropdown-user -->
+                    <!-- /.dropdown-users -->
                 </li>
                 <!-- /.dropdown -->
             </ul>
@@ -93,11 +93,11 @@ Website: http://www.webthemez.com/
         <div id="page-wrapper">
             <div class="header">
                 <h1 class="page-header">
-                    User Profile
+                    users Profile
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href={{ route('dashboard.index') }}>Dashboard</a></li>
-                    <li class="active">User Profile</li>
+                    <li class="active">users Profile</li>
                 </ol>
 
                 <div class="row">
@@ -124,21 +124,25 @@ Website: http://www.webthemez.com/
                                         <div class="col-md-4 mb-4">
                                             <label for="validationServer01">NIK</label>
                                             <input type="text" class="form-control is-valid" id="validationServer01"
-                                                placeholder="NIK" value="Dummy" required>
+                                                placeholder="NIK" value="{{ $users->nik_operator }}" required>
                                         </div>
 
                                         <div class="col-md-4 mb-4">
                                             <label for="validationServer02">Nama</label>
                                             <input type="text" class="form-control is-valid" id="validationServer02"
-                                                placeholder="Nama" value="Dummy" required>
+                                                placeholder="Nama" value="{{ $users->nama }}" required>
                                         </div>
                                         
                                         <div class="col-md-4 mb-4">
                                             <label for="validationServer03">Jabatan</label>
                                             <input type="text" class="form-control is-invalid" id="validationServer03"
-                                                placeholder="Jabatan" value="Dummy" required>
+                                                placeholder="Jabatan" value="{{ $users->jabatan }}" required>
                                         </div>
-                                   
+                                        <div class="col-md-4 mb-4">
+                                            <label for="validationServer03">Username</label>
+                                            <input type="text" class="form-control is-invalid" id="validationServer03"
+                                                placeholder="Jabatan" value="{{ $users->username }}" required>
+                                        </div>
                                 </form>
                             </div>
                             <div class="panel-body">
