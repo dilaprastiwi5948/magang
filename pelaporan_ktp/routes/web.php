@@ -31,6 +31,8 @@ Route::post('/', [LoginController::class, 'authenticate']);
 // Route::get('/datapelaporan', [DataCetakController::class, 'dataPelaporan']);
 Route::resource('pelaporan', PelaporanController::class);
 Route::resource('data_pelaporan', DataCetakController::class);
+
+Route::post('data_pelaporan', [PelaporanController::class, 'store']);
 //Route search
 Route::get('/search', [PelaporanController::class, 'search'])->name('search');
 
@@ -48,3 +50,5 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::resource('cari', PencarianController::class);
 Route::resource('users', UsersController::class);
 Route::resource('dashboard', DashboardController::class);
+
+Route::get('cetak', [PelaporanController::class, 'cetakpdf'])->name('cetakpdf');
